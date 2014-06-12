@@ -1,7 +1,43 @@
 <head>
-	<title>Sankofa</title>
+<title>Sankofa</title>
+<style type="text/css">
+	.tweet {
+		box-shadow: 10px 10px 5px #888888;
+		border: 1px solid #0000ff;
+	}
+</style>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript">
+	var msg = {
+		username: "Asif",
+		time: new Date(),
+		tweet: "This is my first tweet"
+	};
+
+	
+	var displayTweet = function(tweet) {
+		$('h3').html(tweet.username);
+		$('p.time').html(tweet.time);
+		$('p.msg').html(tweet.tweet);
+	};
+
+	var displayTweets = function(){
+		displayTweet(msg);
+	}
+
+	$(function() {
+		$('#btnshow').on('click', displayTweets);
+	});
+
+</script>
 </head>
 
 <body>
 	<h1>Sankofa</h1>
+	<button id="btnshow">Show Tweets</button>
+	<div class="tweet">
+		<h3></h3>
+		<p class="time"></p>
+		<p class="msg"></p>
+	</div>
 </body>
