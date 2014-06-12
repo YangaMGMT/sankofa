@@ -22,6 +22,12 @@
 	};
 
 	var displayTweets = function(){
+		var tweet = '<div class="tweet">';
+		tweet += '<h3></h3>';
+		tweet += '<p class="time"></p>';
+		tweet += '<p class="msg"></p>';
+		tweet += '</div>';
+		$('#tweets').html(tweet);
 		displayTweet(msg);
 	}
 
@@ -35,9 +41,7 @@
 <body>
 	<h1>Sankofa</h1>
 	<button id="btnshow">Show Tweets</button>
-	<div class="tweet">
-		<h3></h3>
-		<p class="time"></p>
-		<p class="msg"></p>
+	<div id="tweets">
+		
 	</div>
 </body>
