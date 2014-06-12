@@ -8,11 +8,15 @@
 </style>
 <script src="/scripts/jquery.js"></script>
 <script type="text/javascript">
-	var msg = {
+	var tweets = [{
 		username: "Asif",
 		time: new Date(),
 		tweet: "This is my first tweet"
-	};
+	}, {
+		username: "Ayanga",
+		time: new Date(),
+		tweet: "This is my fifth tweet"
+	}];
 
 	
 	var displayTweet = function(tweet) {
@@ -22,12 +26,14 @@
 		tweetHtml += '<p class="msg">' + tweet.tweet + '</p>';
 		tweetHtml += '</div>';
 		
-		$('#tweets').html(tweetHtml);
+		$('#tweets').append($(tweetHtml));
 	};
 
 	var displayTweets = function(){
-		displayTweet(msg);
-	}
+		for (var i = 0; i < tweets.length; i++){
+			displayTweet(tweets[i]);
+		}
+	};
 
 	$(function() {
 		$('#btnshow').on('click', displayTweets);
