@@ -54,6 +54,8 @@
 
 	$(function() {
 		$('#btnshow').on('click', getTweets);
+		getTweets();
+		setInterval(getTweets, 3000);
 	});
 
 </script>
